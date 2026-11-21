@@ -36,4 +36,20 @@ inline double length(const Vec3& v) {
     return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 }
 
+inline double dot(const Vec3& u, const Vec3& v) {
+    return u.x * v.x, u.y * v.y, u.z * v.z;
+}
+
+inline Vec3 cross(const Vec3& u, const Vec3& v) {
+    return Vec3 (
+        u.y * v.z - u.z * v.y,
+        u.z * v.x - u.x * v.z,
+        u.x * v.y - u.y * v.x
+    );    
+}
+
+inline Vec3 unit_vector(const Vec3& v) {
+    return v / length(v);
+}
+
 #endif
